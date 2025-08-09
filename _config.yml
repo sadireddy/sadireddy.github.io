@@ -1,3 +1,42 @@
 title: "Dr. Ram Prasad Reddy Sadi"
 description: "Academic Profile | Patents | Research | Publications"
 theme: jekyll-theme-cayman
+# Site settings
+title: FDP Assignments Portfolio
+description: A portfolio of assignments and learnings from the Faculty Development Program
+baseurl: "" # Leave empty for root, or set to "/sadireddy.github.io" if hosted in a subdirectory
+url: "https://sadireddy.github.io" # The base URL for the site
+repository: "sadireddy/sadireddy.github.io" # GitHub repository for GitHub Pages
+
+# Build settings
+theme: minima # A simple, GitHub Pages-compatible theme
+plugins:
+  - jekyll-feed # Generates an RSS feed
+  - jekyll-seo-tag # Adds SEO metadata for better search engine visibility
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM # GitHub Flavored Markdown for compatibility with .md files
+
+# Collections for organizing FDP assignments
+collections:
+  assignments:
+    output: true
+    permalink: /assignments/:path/
+
+# Default settings for Markdown files
+defaults:
+  - scope:
+      path: ""
+      type: assignments
+    values:
+      layout: assignment
+      author: Sadireddy
+
+# Exclude unnecessary files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
